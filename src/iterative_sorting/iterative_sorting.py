@@ -1,20 +1,34 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    """An implementation of the selection sort algorithm
 
-        for index in range(cur_index, len(arr)):
+    Arguments:
+        arr {list} -- the list to be sorted
+
+    Returns:
+        list -- the sorted list
+    """
+    arr_len = len(arr)
+
+    for i in range(0, arr_len - 1):
+        smallest_index = i
+
+        for index in range(i, arr_len):
             if arr[index] < arr[smallest_index]:
                 arr[smallest_index], arr[index] = arr[index], arr[smallest_index]
 
-    print(arr)
     return arr
-
-# TO-DO:  implement the Bubble Sort function below
 
 
 def bubble_sort(arr):
+    """An implementation of the bubble sort algorithm
+
+    Arguments:
+        arr {list} -- the list to be sorted
+
+    Returns:
+        list -- the sorted list
+    """
     swapped = False
 
     for index in range(0, len(arr)):
@@ -30,9 +44,21 @@ def bubble_sort(arr):
     return arr
 
 
-# STRETCH: implement the Count Sort function below
-
 def count_sort(arr, maximum=-1):
+    """Implementation of the count sort algorithm
+    https://www.programiz.com/dsa/counting-sort
+    https://www.geeksforgeeks.org/counting-sort/
+    These links help make sense of the algorithm
+
+    Arguments:
+        arr {list} -- the list to be sorted
+
+    Keyword Arguments:
+        maximum {int} -- [description] (default: {-1})
+
+    Returns:
+        list -- a new sorted list
+    """
     # return back an empty array
     if len(arr) == 0:
         return []
@@ -60,11 +86,11 @@ def count_sort(arr, maximum=-1):
     # Find the index of each element of the original array in count array.
     # This gives the cumulative count.
     # Place the element at the index calculated.
-    for k in arr:
-        result[count_array[k] - 1] = k
+    for i in arr:
+        result[count_array[i] - 1] = i
 
         # in case of multiple occurrence
         # insert the number in the index to the left
-        count_array[k] -= 1
+        count_array[i] -= 1
 
     return result
