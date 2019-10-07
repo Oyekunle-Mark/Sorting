@@ -19,12 +19,18 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    for index in range(0, len(arr)):
+    swapped = False
 
+    for index in range(0, len(arr)):
         for cur_index in range(index, len(arr) - 1):
             if arr[index] > arr[cur_index + 1]:
                 arr[index], arr[cur_index +
                                 1] = arr[cur_index + 1], arr[index]
+                swapped = True
+
+        if not swapped:
+            return arr
+
     return arr
 
 
