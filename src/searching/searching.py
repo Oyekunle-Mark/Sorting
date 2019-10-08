@@ -25,6 +25,7 @@ def binary_search(arr, target):
         Returns:
     int -- -1 if target not found in arr and 1 if found
     """
+    # if array is empty
     if len(arr) == 0:
         return -1
 
@@ -57,9 +58,11 @@ def binary_search_recursive(arr, target, low, high):
     Returns:
     int -- -1 if target not found in arr and 1 if found
     """
+    # if array is empty
     if len(arr) == 0:
         return -1
 
+    # base case
     if low > high:
         return -1
 
