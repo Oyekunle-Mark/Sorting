@@ -1,4 +1,13 @@
 def merge(arrA, arrB):
+    """Helper function to merge two array while sorting them in the process
+
+    Arguments:
+        arrA {list} -- the left array
+        arrB {list} -- the right array
+
+    Returns:
+        list -- the merged and sorted array
+    """
     merged_arr = []
     # start checking from the start of both arrays
     i, j = 0, 0
@@ -26,6 +35,14 @@ def merge(arrA, arrB):
 
 
 def merge_sort(arr):
+    """Implementation of the merge sort algorithm
+
+    Arguments:
+        arr {list} -- array to be sorted
+
+    Returns:
+        list -- sorted list
+    """
     # base case
     if len(arr) < 2:
         return arr
